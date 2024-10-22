@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="/apple-touch-icon.png">
+    <title>Vid Miner</title>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+
+<div class="card">
+    <span class="card__title">Welcome</span>
+    <p class="card__content">Enter YouTube video URL to continue</p>
+    <form action="/video" class="card__form" method="post">
+        <div class="form-group">
+            <input type="text" name="videoUrl" required placeholder="Enter Video URL"/>
+        </div>
+        <button type="submit" class="card__button">Let`s go →</button>
+    </form>
+</div>
+
+<div class="footer-bottom">
+    <p>Made By Mohammad Farooq
+        <a href="https://github.com/FAROOQkhan10" style="text-decoration: none; color:#FAF9F6" target="_blank" class="fab fa-github">GitHub</a>
+        <a href="https://www.youtube.com/@CodeZipper12" style="text-decoration: none; color:#FAF9F6" target="_blank">YouTube</a>
+        <a href="https://www.linkedin.com/in/mohammad-farooq-a40b891b3/" style="text-decoration: none; color:#FAF9F6" target="_blank">LinkedIn</a></p>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="/apple-touch-icon.png">
+    <title>Vid Miner</title>
+    <link rel="stylesheet" href="/result.css">
+    <script src="/result.js" type="module"></script>
+</head>
+<body>
+
+<div th:if="${response.items.size() > 0}">
+    <a href="/" class="Back">← Go Back</a>
+    <div class="card-container">
+        <div th:each="item : ${response.items}" class="card">
+
+
+            <a th:href="${item.snippet.thumbnails.maxres.url}" download="${item.snippet.title}.jpg">
+                <img th:src="${item.snippet.thumbnails.maxres.url}" alt="Thumbnail" class="card-img"/>
+            </a>
+
+            <h2 class="card__title" th:text="${item.snippet.channelTitle}"></h2>
+            <h5 th:text="${item.snippet.title}"></h5>
+            <p class="desc" th:text="${item.snippet.description}">
+            </p>
+            <button type="button" class="copy" data-copy=".desc">
+                <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+                <span class="copy-label">copy description</span>
+            </button>
+
+            <div class="card__subtitle">
+                <p class="stat-item">
+                    <ion-icon name="eye-outline" class="stat-icon"></ion-icon>
+                    <span th:text="${item.statistics.viewCount} "></span>
+                </p>
+                <p class="stat-item">
+                    <ion-icon name="thumbs-up-outline" class="stat-icon"></ion-icon>
+                    <span th:text="${item.statistics.likeCount} "></span>
+                </p>
+                <p class="stat-item">
+                    <ion-icon name="chatbubble-ellipses-outline" class="stat-icon"></ion-icon>
+                    <span th:text="${item.statistics.commentCount} "></span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <a href="/" class="Back">← Go Back</a>
+</div>
+
+<div th:if="${response == null}">
+    <a href="/" class="Back">← Go Back</a>
+    <div class="alert alert-danger" role="alert">An error occurred. Please try again.</div>
+</div>
+
+<div th:if="${response.items.size() == 0}" class="no-results">
+    <a href="/" class="Back">← Go Back</a>
+    <div th:replace="404 :: content"></div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+
