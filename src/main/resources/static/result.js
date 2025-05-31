@@ -17,8 +17,3 @@ document.querySelectorAll(".copy").forEach(copyButton => {
             });
     });
 });
-
-
-
-
-
