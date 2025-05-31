@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @Service
 public class YoutubeService {
 
@@ -19,18 +22,14 @@ public class YoutubeService {
         return restTemplate.getForObject(url, VideoResponse.class);
     }
 
+    private static final Pattern YOUTUBE_VIDEO_ID_PATTERN = Pattern.compile(
+            "(?:youtu\\.be/|youtube\\.com/(?:shorts/|v/|u/\\w/|embed/|watch\\?v=|&v=))([^#&?]{11})",
+            Pattern.CASE_INSENSITIVE
+    );
 
     private String extractVideoId(String url) {
-
-        // Handle youtu.be format
-        if (url.contains("youtu.be/")){
-            int index = url.lastIndexOf("/");
-            return url.substring(index + 1).split("[?&#]")[0];
-        }
-
-        // Handle youtube.com/watch?v= format
-        int vIndex = url.indexOf("v=");
-        return url.substring(vIndex + 2).split("[&?#]")[0];
+        Matcher matcher = YOUTUBE_VIDEO_ID_PATTERN.matcher(url);
+        return matcher.find()?matcher.group(1):"";
     }
 
 }
