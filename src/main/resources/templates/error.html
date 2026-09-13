@@ -2,14 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="x-icon" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="/404.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/404.css?v=3">
     <title>Vid Miner</title>
 </head>
 <body>
-<div class="container mt-5">
-    <a href="/" class="Back">← Go Back</a>
-    <h1>Something Went Wrong</h1>
+<div class="error-message">
+    <ion-icon name="hammer-outline"></ion-icon>
+    <h1>Something went wrong</h1>
+    <p class="hint">The dig hit a wall. Head back and give it another go.</p>
+    <a href="/" class="Back">&#8592; Go back</a>
 </div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

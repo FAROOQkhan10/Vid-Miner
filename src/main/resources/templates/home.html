@@ -2,30 +2,79 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="x-icon" href="/apple-touch-icon.png">
     <title>Vid Miner</title>
-    <link rel="stylesheet" href="/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/home.css?v=4">
 </head>
 <body>
 
-<div class="card">
-    <span class="card__title">Welcome</span>
-    <p class="card__content">Enter YouTube video URL to continue</p>
-    <form action="/video" class="card__form" method="post">
-        <div class="form-group">
-            <input type="text" name="videoUrl" required placeholder="Enter Video URL"/>
+<div class="slab slab--pink" aria-hidden="true"></div>
+<div class="slab slab--blue" aria-hidden="true"></div>
+<div class="slab slab--yellow" aria-hidden="true"></div>
+
+<main class="hero">
+    <span class="tag">Vid Miner</span>
+    <h1 class="hero__title">Crack open any YouTube video</h1>
+    <p class="hero__subtitle">Paste a link and pull out the title, view count, likes, comments and thumbnail in one go. No sign-in, no API key of your own.</p>
+
+    <div class="steps">
+        <div class="step">
+            <span class="step__num">1</span>
+            <ion-icon name="link-outline"></ion-icon>
+            <p>Paste the link</p>
         </div>
-        <button type="submit" class="card__button">Let`s go →</button>
-    </form>
-</div>
+        <div class="step">
+            <span class="step__num">2</span>
+            <ion-icon name="hammer-outline"></ion-icon>
+            <p>We dig it up</p>
+        </div>
+        <div class="step">
+            <span class="step__num">3</span>
+            <ion-icon name="albums-outline"></ion-icon>
+            <p>Grab everything</p>
+        </div>
+    </div>
+
+    <div class="console">
+        <svg class="burst" viewBox="0 0 100 100" aria-hidden="true">
+            <polygon points="50,2 61,32 92,28 68,50 92,72 61,68 50,98 39,68 8,72 32,50 8,28 39,32"
+                     fill="#ffd400" stroke="#0a0a0a" stroke-width="4" stroke-linejoin="round"/>
+        </svg>
+
+        <form action="/video" class="card__form" method="post">
+            <div class="form-group">
+                <input type="text" name="videoUrl" required placeholder="Paste a YouTube video URL" aria-label="YouTube video URL"/>
+            </div>
+            <button type="submit" class="card__button">Dig in</button>
+        </form>
+    </div>
+</main>
 
 <div class="footer-bottom">
-    <p>Made By Mohammad Farooq
-        <a href="https://github.com/FAROOQkhan10" style="text-decoration: none; color:#FAF9F6" target="_blank" class="fab fa-github">GitHub</a>
-        <a href="https://www.youtube.com/@CodeZipper12" style="text-decoration: none; color:#FAF9F6" target="_blank">YouTube</a>
-        <a href="https://www.linkedin.com/in/mohammad-farooq-a40b891b3/" style="text-decoration: none; color:#FAF9F6" target="_blank">LinkedIn</a></p>
+    <p>
+        <span class="credit">Made by Mohammad Farooq</span>
+        <span class="footer-links">
+            <a href="https://github.com/FAROOQkhan10" target="_blank" rel="noopener" aria-label="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://www.youtube.com/@CodeZipper12" target="_blank" rel="noopener" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/mohammad-farooq-a40b891b3/" target="_blank" rel="noopener" aria-label="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </span>
+    </p>
 </div>
 
+<div class="processing-overlay" id="processingOverlay" role="status" aria-live="polite">
+    <div class="processing-box">
+        <div class="spinner" aria-hidden="true"></div>
+        <p id="processingText">Cracking open the link&hellip;</p>
+    </div>
+</div>
+
+<script src="/home.js?v=1"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
