@@ -21,10 +21,10 @@ Paste a link and pull out the title, view count, likes, comments, and thumbnail 
 Vid Miner takes any public YouTube video URL and digs up everything worth knowing about it — title, channel, description, view count, likes, comments, and the max-res thumbnail — rendered on a clean results page. No Google sign-in, no OAuth flow, no need to bring your own API key. Paste a link, hit **Dig In**, done.
 
 <div align="center">
-<img src="[https://i.imgur.com/placeholder-home.png](https://github.com/FAROOQkhan10/Vid-Miner/blob/main/assets/img1.png)" width="85%" alt="Vid Miner home screen" />
+<img src="https://raw.githubusercontent.com/FAROOQkhan10/Vid-Miner/main/assets/img1.png" width="85%" alt="Vid Miner home screen" />
 <br/><em>Home — paste a link and dig</em>
 <br/><br/>
-<img src="[https://i.imgur.com/placeholder-result.png](https://github.com/FAROOQkhan10/Vid-Miner/blob/main/assets/img2.png)" width="85%" alt="Vid Miner result screen" />
+<img src="https://raw.githubusercontent.com/FAROOQkhan10/Vid-Miner/main/assets/img2.png" width="85%" alt="Vid Miner result screen" />
 <br/><em>Result — everything pulled out in one card</em>
 </div>
 
